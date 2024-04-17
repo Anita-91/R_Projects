@@ -1,0 +1,47 @@
+---
+title: "matrix_question"
+output:
+  word_document: default
+  html_document: default
+date: "2024-04-17"
+---
+
+```{r}
+# Define matrices
+A <- matrix(1:9, nrow = 3)
+B <- matrix(c(1, 2, 3, 4), nrow = 2)
+C <- matrix(c(2, 0, 1, 2), nrow = 2)
+A
+B
+C
+```
+
+```{r}
+# 1.Sum of matrices B and C
+sum_BC <- B + C
+sum_BC
+```
+
+```{r}
+# 2.Product of matrices B and C (matrix multiplication)
+product_BC <- B %*% C
+product_BC
+```
+
+```{r}
+# 3.Calculate the sum of each row in matrix A
+row_sums_A <- apply(A, 1, sum)
+row_sums_A
+```
+
+```{r}
+# 4.Calculate the mean value of each column in matrix A
+mean_col <- colMeans(A)
+mean_col
+```
+
+```{r}
+# 5.Set all elements to 0 if divisible by 2
+A[A %% 2 == 0] <- 0
+A
+```
