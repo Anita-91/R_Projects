@@ -1,8 +1,6 @@
 ---
 title: "matrix_question"
-output:
-  word_document: default
-  html_document: default
+output: word_document
 date: "2024-04-17"
 ---
 
