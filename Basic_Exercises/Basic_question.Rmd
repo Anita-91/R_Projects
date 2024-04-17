@@ -1,0 +1,143 @@
+
+---
+title: "Project- Basic Questions"
+output:
+  pdf_document: default
+  html_document: default
+date: "2024-04-08"
+---
+  
+```{r}
+#1. Create a vector called stock.prices
+stock.prices <- c(23, 27, 23, 21, 34)
+print(stock.prices)
+```
+
+```{r}
+#2. Create a numeric vector containing the numbers 1 to 10
+numeric_vector <- 1:10
+numeric_vector
+```
+
+
+```{r}
+#3. Calculate the sum of the numbers
+sum_of_numbers <- sum(numeric_vector)
+sum_of_numbers
+```
+
+
+```{r}
+#4. Create a logical vector indicating which numbers are even
+even_vector <- numeric_vector %% 2 == 0
+even_vector
+```
+
+```{r}
+#5. Use the plot() function to create a scatter plot of the mtcars dataset, plotting mpg against hp:
+#Load the mtcars dataset
+data(mtcars)
+
+# Create a scatter plot of mpg against hp
+plot(mtcars$hp, mtcars$mpg, xlab = "Horsepower", ylab = "Miles Per Gallon", main = "Scatter Plot of mpg against hp")
+```
+
+
+```{r}
+#6. Given a vector a = c("a", "b", "c", "d", "e"), extract the 2nd and 4th elements
+
+a <- c("a", "b", "c", "d", "e")
+extracted_elements <- a[c(2, 4)] # Extract the 2nd and 4th elements
+extracted_elements
+```
+
+
+```{r}
+#7. From the mtcars dataset, select the rows where cyl is 4 and only the columns mpg, hp, and wt: 
+
+selected_data <- mtcars[mtcars$cyl == 4, c("mpg", "hp", "wt")]
+selected_data
+```
+
+
+```{r}
+#8. Create a list `my_list` that contains three elements: a numeric vector (1, 2, 3), a character vector (“a”, “b”, “c”), and a matrix with 2 rows and 2 columns.
+my_list <- list(numeric_vector = c(1, 2, 3), character_vector = c("a", "b", "c"), matrix = matrix(1:4, nrow = 2))
+my_list
+```
+
+
+```{r}
+#9. Add a new element to `my_list` that is a logical vector (TRUE, FALSE).
+my_list$log_vector <- c(TRUE, FALSE)
+my_list
+```
+
+
+```{r}
+# 10. Create character vector `words` with the elements “R”, “is”, “fun”.
+words <- c("R", "is", "fun")
+words
+```
+```{r}
+# 11. Use a function to concatenate these words into a single string: “R is fun”.
+concate_string <- paste(words, collapse = " ")
+concate_string
+```
+
+
+```{r}
+# 12. Replace “fun” with “awesome” in the concatenated string.
+modified_string <- gsub("fun", "awesome", concate_string)
+modified_string
+```
+
+
+```{r}
+# 13. From a numeric vector to a character vector: v_num = c(1, 2, 3)
+v_num <- c(1, 2, 3)
+v_char <- as.character(v_num)
+v_char
+```
+
+
+```{r}
+# 14. From a character vector to a factor: v_char = c("low", "medium", "high")
+v_char <- c("low", "medium", "high")
+v_fact <- factor(v_char)
+v_fact
+```
+
+
+```{r}
+# 15. From a factor to a numeric vector, considering the factor levels as numeric values: f = factor(c(1, 2, 3)).
+f <- factor(c(1, 2, 3))
+numeric_vector <- as.numeric(as.character(f))
+numeric_vector
+```
+
+```{r}
+# 16. colors = c(“red”, “blue”, “green”, “blue”, “red”, “green”, “green”, “red”)
+colors <- c("red", "blue", "green", "blue", "red", "green", "green", "red")
+f_colors <- factor(colors)
+f_colors
+levels(f_colors) 
+f_colors <- factor(colors, levels = c("green", "blue", "red"))
+f_colors
+```
+
+```{r}
+# 17. 
+
+my_list <- list(name = "Alice", age = 30, hobbies = c("Cycling", "Art", "Music"))
+my_df <- data.frame(Name = c("Alice", "Bob"), Age = c(25, 30))
+my_list
+my_df
+
+#--- Access and print the hobbies element from my_list
+my_list$hobbies
+
+#--- Add a new column Occupation to my_df with values “Doctor” for Alice and “Engineer” for Bob.
+my_df$Occupation <- c("Doctor", "Engineer")
+my_df
+```
