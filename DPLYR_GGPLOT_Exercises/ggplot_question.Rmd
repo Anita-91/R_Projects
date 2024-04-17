@@ -1,8 +1,6 @@
 ---
 title: "ggplot_question"
-output:
-  word_document: default
-  html_document: default
+output: word_document
 date: "2024-04-17"
 ---
 ```{r}
@@ -56,8 +54,7 @@ ggplot(airquality, aes(x = Day, y = Ozone, color = factor(Month))) +
   # 2. Uses different colors to represent each Diet.
   # 3. Groups the lines by Chick to show individual growth trajectories within each diet.
 library(ggplot2)
-#ChickWeight <- read.csv("path/to/your/ChickWeight.csv") #Add your file path of csv file.
-ChickWeight <- read.csv("C:/Users/LENOVO/Documents/anitha_project/ChickWeight.csv")
+ChickWeight <- read.csv("path/to/your/ChickWeight.csv") #Add your file path of csv file.
 ggplot(ChickWeight, aes(x = Time, y = weight, color = factor(Diet), group = Chick)) +
   geom_line() + # Line plot
   labs(title = "Growth by Diet and Chick", x = "Time", y = "Weight", color = "Diet") +
@@ -65,8 +62,7 @@ ggplot(ChickWeight, aes(x = Time, y = weight, color = factor(Diet), group = Chic
 ```
 ```{r}
 library(ggplot2)
-#ChickWeight <- read.csv("path/to/your/ChickWeight.csv") #Add your file path of csv file.
-ChickWeight <- read.csv("C:/Users/LENOVO/Documents/anitha_project/ChickWeight.csv")
+ChickWeight <- read.csv("path/to/your/ChickWeight.csv") #Add your file path of csv file.
 
 ### 4 ->> Create a histogram to show the distribution of carat sizes
 ggplot(ChickWeight, aes(x = weight)) +
