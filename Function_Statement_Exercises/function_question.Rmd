@@ -1,0 +1,100 @@
+---
+title: "functions_question"
+output:
+  word_document: default
+  html_document: default
+date: "2024-04-17"
+---
+
+```{r}
+# 1. Create a function that takes in a name as a string argument and prints out "Hello name":
+say_hello <- function(name) {
+  cat("Hello", name, "\n")
+}
+
+say_hello("Alice")
+
+```
+
+```{r}
+# 2. Create a function that takes in a name as a string argument and returns a string of the form - "Hello name":
+hello_string <- function(name) {
+  return(paste("Hello", name))
+}
+
+val <- hello_string("Friends")
+cat("Final String::",val, "\n")
+typeof(val)
+```
+
+```{r}
+# 3. Create a function that will return the product of two integers:
+multiply <- function(x, y) {
+  return(x * y)
+}
+
+result <- multiply(10, 3)
+cat("Product of two integers::", result, "\n")
+
+```
+
+```{r}
+# 4. Create a function to check the count of numbers:
+count_numbers <- function(x) {
+  counts <- table(x)
+  return(counts)
+}
+
+x <- c(1, 1, 1, 2, 2, 2, 3, 15, 3)
+all_count <- count_numbers(x)
+all_count
+```
+
+```{r}
+# 5. Create a function categorize_age that takes an age (numeric value) as input and returns "Child", "Adult", or "Senior":
+categorize_age <- function(age) {
+  if (age < 18) {
+    return("Child")
+  } else if (age >= 18 & age <= 64) {
+    return("Adult")
+  } else {
+    return("Senior")
+  }
+}
+result <- categorize_age(65)
+cat("Category:", result, "\n")
+
+```
+
+```{r}
+# 6. Write a function average_salary_by_age_group that takes a data frame with columns Age and Salary and returns a new data frame with two columns, AgeGroup and AverageSalary:
+average_salary_by_age_group <- function(df) {
+  df$AgeGroup <- cut(df$Age, breaks = c(0, 30, 50, Inf), labels = c("Young", "Middle", "Senior"))
+  avg_salary <- tapply(df$Salary, df$AgeGroup, mean)
+  final_df <- data.frame(AgeGroup = names(avg_salary), AverageSalary = avg_salary)
+  return(final_df)
+}
+
+# Example data frame
+sample_df <- data.frame(Age = c(25, 35, 45, 55, 65), Salary = c(50000, 60000, 70000, 80000, 90000))
+
+# Calling the function
+result <- average_salary_by_age_group(sample_df)
+result
+
+```
+
+```{r}
+# 7. Given a data frame df with columns Length and Width representing dimensions of rectangles, write a function area_rectangle that calculates the area of each rectangle.
+area_rectangle <- function(row) {
+  row$Area <- row$Length * row$Width
+  return(row)
+}
+
+# Example data frame
+rect_df <- data.frame(Length = c(2, 3, 4), Width = c(5, 6, 7))
+new_df <- lapply(1:nrow(rect_df), function(i) area_rectangle(rect_df[i,]))
+new_df <- do.call(rbind, new_df)
+new_df
+
+```
